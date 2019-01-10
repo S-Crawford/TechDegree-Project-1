@@ -62,7 +62,8 @@ function getRandomQuote(){
 */
 function printQuote () {
   var theQuote = getRandomQuote();
-  var str = "<p class ='quote'>" + theQuote.quote + "</p>"
+  var str = '<p class ="quote">' + theQuote.quote + '</p>'
+  str += '<p class="source">' + theQuote.author + '<span class="citation">' + theQuote.citation + '</span><span class="year">' + theQuote.year + '</span></p>';
   document.getElementById("quote-box").innerHTML = str;
 }
 

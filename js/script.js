@@ -63,7 +63,20 @@ function getRandomQuote(){
 function printQuote () {
   var theQuote = getRandomQuote();
   var str = '<p class ="quote">' + theQuote.quote + '</p>'
-  str += '<p class="source">' + theQuote.author + '<span class="citation">' + theQuote.citation + '</span><span class="year">' + theQuote.year + '</span></p>';
+  //Check for author
+  if("author" in theQuote){
+    str += '<p class="source">' + theQuote.author;
+  }
+  //check for citation
+  if("citation" in theQuote){
+    str += '<span class="citation">' + theQuote.citation + '</span>';
+  }
+  //check for year
+  if("year" in theQuote){
+    str += '<span class="year">' + theQuote.year + '</span>';
+  }
+  //finish p element
+  str += '</p>';
   document.getElementById("quote-box").innerHTML = str;
 }
 
